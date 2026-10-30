@@ -1,0 +1,29 @@
+<div class="topbar">
+    <div class="brand">
+        <div class="brand-title">Inventory Studio</div>
+        <div class="brand-subtitle">Java 8 Struts 2</div>
+    </div>
+    <div class="nav-links">
+        <a href="item-list.action">Item</a>
+        <a href="inventory-list.action">Inventory</a>
+        <a href="order-list.action">Order</a>
+        <a href="report-list.action">Report</a>
+    </div>
+</div>
+<div class="alerts">
+    <s:if test="message != null && message != ''">
+        <div class="notice success">
+            <s:property value="message"/>
+        </div>
+    </s:if>
+    <s:if test="hasActionErrors()">
+        <div class="notice error">
+            <s:actionerror/>
+        </div>
+    </s:if>
+    <s:if test="hasFieldErrors()">
+        <div class="notice error">
+            <s:fielderror/>
+        </div>
+    </s:if>
+</div>

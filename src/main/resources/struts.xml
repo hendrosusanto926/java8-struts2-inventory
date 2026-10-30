@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.action.extension" value="action"/>
+
+    <package name="inventory" namespace="/" extends="struts-default">
+        <global-results>
+            <result name="error">/WEB-INF/views/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="com.inventoryapp.exception.BusinessException" result="error"/>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="item-list" class="com.inventoryapp.action.ItemAction" method="list">
+            <result name="success">/WEB-INF/views/item/list.jsp</result>
+        </action>
+        <action name="item-form" class="com.inventoryapp.action.ItemAction" method="form">
+            <result name="success">/WEB-INF/views/item/form.jsp</result>
+        </action>
+        <action name="item-save" class="com.inventoryapp.action.ItemAction" method="save">
+            <result name="success">/WEB-INF/views/item/list.jsp</result>
+            <result name="input">/WEB-INF/views/item/form.jsp</result>
+        </action>
+        <action name="item-edit" class="com.inventoryapp.action.ItemAction" method="form">
+            <result name="success">/WEB-INF/views/item/form.jsp</result>
+        </action>
+        <action name="item-update" class="com.inventoryapp.action.ItemAction" method="update">
+            <result name="success">/WEB-INF/views/item/list.jsp</result>
+            <result name="input">/WEB-INF/views/item/form.jsp</result>
+        </action>
+        <action name="item-delete" class="com.inventoryapp.action.ItemAction" method="delete">
+            <result name="success">/WEB-INF/views/item/list.jsp</result>
+        </action>
+
+        <action name="inventory-list" class="com.inventoryapp.action.InventoryAction" method="list">
+            <result name="success">/WEB-INF/views/inventory/list.jsp</result>
+        </action>
+        <action name="inventory-form" class="com.inventoryapp.action.InventoryAction" method="form">
+            <result name="success">/WEB-INF/views/inventory/form.jsp</result>
+        </action>
+        <action name="inventory-save" class="com.inventoryapp.action.InventoryAction" method="save">
+            <result name="success">/WEB-INF/views/inventory/list.jsp</result>
+            <result name="input">/WEB-INF/views/inventory/form.jsp</result>
+        </action>
+        <action name="inventory-edit" class="com.inventoryapp.action.InventoryAction" method="form">
+            <result name="success">/WEB-INF/views/inventory/form.jsp</result>
+        </action>
+        <action name="inventory-update" class="com.inventoryapp.action.InventoryAction" method="update">
+            <result name="success">/WEB-INF/views/inventory/list.jsp</result>
+            <result name="input">/WEB-INF/views/inventory/form.jsp</result>
+        </action>
+        <action name="inventory-delete" class="com.inventoryapp.action.InventoryAction" method="delete">
+            <result name="success">/WEB-INF/views/inventory/list.jsp</result>
+        </action>
+
+        <action name="order-list" class="com.inventoryapp.action.OrderAction" method="list">
+            <result name="success">/WEB-INF/views/order/list.jsp</result>
+        </action>
+        <action name="order-form" class="com.inventoryapp.action.OrderAction" method="form">
+            <result name="success">/WEB-INF/views/order/form.jsp</result>
+        </action>
+        <action name="order-save" class="com.inventoryapp.action.OrderAction" method="save">
+            <result name="success">/WEB-INF/views/order/list.jsp</result>
+            <result name="input">/WEB-INF/views/order/form.jsp</result>
+        </action>
+        <action name="order-edit" class="com.inventoryapp.action.OrderAction" method="form">
+            <result name="success">/WEB-INF/views/order/form.jsp</result>
+        </action>
+        <action name="order-update" class="com.inventoryapp.action.OrderAction" method="update">
+            <result name="success">/WEB-INF/views/order/list.jsp</result>
+            <result name="input">/WEB-INF/views/order/form.jsp</result>
+        </action>
+        <action name="order-delete" class="com.inventoryapp.action.OrderAction" method="delete">
+            <result name="success">/WEB-INF/views/order/list.jsp</result>
+        </action>
+
+        <action name="report-list" class="com.inventoryapp.action.ReportAction" method="list">
+            <result name="success">/WEB-INF/views/report/list.jsp</result>
+        </action>
+    </package>
+</struts>
